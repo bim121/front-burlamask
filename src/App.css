@@ -1,8 +1,8 @@
 .App {
-  background-color: rgb(215, 120, 150);
 }
 
 header {
+  background-color: rgb(125, 149, 216);
   display: flex;
   justify-content: space-between;
   font-family: Brush Script MT, Brush Script Std, cursive;
@@ -13,7 +13,7 @@ h1{
   padding: 15px;
 }
 
-.wrap {
+.wrapHeader {
   display: flex;
   float: left;
   padding-left: 15px;
@@ -21,4 +21,27 @@ h1{
 
 .inputForm {
   padding: 40px;
+}
+
+footer{
+  background-color: rgb(125, 149, 216);
+  display: flex;
+  justify-content: space-between;
+  font-family: Brush Script MT, Brush Script Std, cursive;
+}
+
+.wrapFooter {
+  display: flex;
+  float: left;
+  padding-left: 15px;
+}
+
+.team{
+  text-align: center;
+  padding-right: 30px;
+}
+
+p{
+  text-align: center;
+  font-size: 3em;
 }
