@@ -1,4 +1,5 @@
 import './App.css';
+import SliderUpload from './Slider/SliderUpload';
 
 function App() {
   return (
@@ -16,10 +17,7 @@ function App() {
     </header>
 
     <div className="background">
-      <img src="background.png" width="1000vh" height="500vh"/>
-    </div>
-    <div className="background">
-      <img src="background.png" width="1000vh" height="500vh"/>
+        <SliderUpload/>
     </div>
     
     <footer>
