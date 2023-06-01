@@ -2,8 +2,7 @@ import React, { useState, useRef } from 'react';
 import Modal from 'react-modal';
 import styles from './ModalComponent.module.css'
 
-const ModalComponent = ({ isOpen, closeModal, handleFileUpload, selectedFile}) => {
-  const [text, setText] = useState('');
+const ModalComponent = ({ isOpen, closeModal, handleFileUpload, selectedFile, handleImage, setText, text}) => {
 
   const handleChange = (event) => {
     setText(event.target.value);
@@ -17,11 +16,11 @@ const ModalComponent = ({ isOpen, closeModal, handleFileUpload, selectedFile}) =
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.customFileUpload}>
-            <label for="file-upload" className={styles.fileUploadLabel}>
+            <label htmlFor="file-upload" className={styles.fileUploadLabel}>
               <span className={styles.uploadText}>Выбрать файл</span>
               <span className={styles.fileName}>{selectedFile ? selectedFile.name : 'Файл не выбран'}</span>
             </label>
-            <input id="file-upload" class={styles.fileUpload} type="file" accept="image/*" onChange={handleFileUpload} />
+            <input id="file-upload" className={styles.fileUpload} type="file" accept="image/*" onChange={handleImage} />
           </div>
         
 
@@ -35,7 +34,7 @@ const ModalComponent = ({ isOpen, closeModal, handleFileUpload, selectedFile}) =
         </div>
         <div className={styles.buttons}>
           <button onClick={closeModal}>Закрыть</button>
-          <button>Отправить</button>
+          <button onClick={handleFileUpload}>Отправить</button>
         </div>
       </div>
     </Modal>

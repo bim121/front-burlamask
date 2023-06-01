@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import Slider from 'react-slider';
 import ModalComponent from '../ModalComponent/ModalComponent';
 import styles from './SliderUpload.module.css'
+import axios from 'axios';
 
 const SliderUpload = () => {
   const [photos, setPhotos] = useState([]);
@@ -10,6 +11,13 @@ const SliderUpload = () => {
   const sliderRef = useRef(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
+  const [text, setText] = useState('');
+  const [errrorMessage, setErrorMessage] = useState('')
+
+  const handleImage = (e) => {
+    const uploadedPhoto = e.target.files[0];
+    setSelectedFile(e.target.files[0]);
+  }
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -38,10 +46,17 @@ const SliderUpload = () => {
     }
   };
 
-  const handleFileUpload = (e) => {
-    const uploadedPhoto = e.target.files[0];
-    setSelectedFile(e.target.files[0]);
-    const newPhotos = [...photos, URL.createObjectURL(uploadedPhoto)];
+  const handleFileUpload = async() => {
+    const formData = new FormData();
+    formData.append('file', selectedFile);
+    formData.append('description', text);
+    const { data } = await axios.post("http://localhost:5000/initialImage/add", formData);
+    if (data.status === parseInt('401')) {
+      setErrorMessage(data.response)
+    } else {
+      console.log(data)
+    }
+    const newPhotos = [...photos, data.image.url];
     setPhotos(newPhotos);
     setCurrentPhotoIndex(newPhotos.length - 1);
     setSliderValue(newPhotos.length - 1);
@@ -61,8 +76,11 @@ const SliderUpload = () => {
           }}
         >
           <div className={styles.slider}>
-            <div className={styles.upload} onClick={openModal}></div>
-            <ModalComponent isOpen={modalIsOpen} closeModal={closeModal} handleFileUpload={handleFileUpload} selectedFile={selectedFile}/>
+            <div className={styles.upload} onClick={openModal}>
+              <img src="./32339.png" alt={`plus`} className={styles.image}/>
+            </div>
+            <ModalComponent isOpen={modalIsOpen} closeModal={closeModal} handleFileUpload={handleFileUpload} 
+              selectedFile={selectedFile} handleImage={handleImage} setText={setText} text = {text}/>
             {photos.map((photo, index) => (
               <div
                 key={index}
