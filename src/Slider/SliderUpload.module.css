@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    align-items: center;
+}
+
+.button{
+    margin: 5px;
+}
+
+.wrapper{
+    width: 20vw;
+    overflow: hidden;
+}
+
+.slider{
+    display: flex;
+}
+
+.upload{
+    height: 15vh;
+    width: 10vw;
+    background: gray
+}
+
+.image{
+    width: 10vw;
+    height: 15vh; 
+}

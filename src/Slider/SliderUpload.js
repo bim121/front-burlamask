@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Slider from 'react-slider';
-import ModalComponent from '../ModalComponent';
+import ModalComponent from '../ModalComponent/ModalComponent';
+import styles from './SliderUpload.module.css'
 
 const SliderUpload = () => {
   const [photos, setPhotos] = useState([]);
@@ -45,16 +46,11 @@ const SliderUpload = () => {
   };
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
-      <button onClick={handlePrevious} disabled={currentPhotoIndex === 0} style={{ margin: '5px' }}>
+    <div className={styles.container}>
+      <button onClick={handlePrevious} disabled={currentPhotoIndex === 0} className={styles.button}>
         Previous
       </button>
-      <div
-        style={{
-          width: '20vw',
-          overflow: 'hidden',
-        }}
-      >
+      <div className={styles.wrapper}>
         <div
           style={{
             display: 'flex',
@@ -62,8 +58,8 @@ const SliderUpload = () => {
             transform: `translateX(-${sliderValue * (100 / 2)}%)`,
           }}
         >
-          <div style={{ display: 'flex' }}>
-            <div style={{ height: '15vh', width: '10vw', background: 'gray' }} onClick={openModal}></div>
+          <div className={styles.slider}>
+            <div className={styles.upload} onClick={openModal}></div>
             <ModalComponent isOpen={modalIsOpen} closeModal={closeModal} handleFileUpload={handleFileUpload} />
             {photos.map((photo, index) => (
               <div
@@ -73,13 +69,13 @@ const SliderUpload = () => {
                   flexShrink: 1,
                 }}
               >
-                <img src={photo} alt={`Photo ${index}`} style={{ width: '10vw', height: '15vh' }} />
+                <img src={photo} alt={`Photo ${index}`} className={styles.image} />
               </div>
             ))}
           </div>
         </div>
       </div>
-      <button onClick={handleNext} disabled={currentPhotoIndex === photos.length - 1} style={{ margin: '5px' }}>
+      <button onClick={handleNext} disabled={currentPhotoIndex === photos.length - 1} className={styles.button}>
         Next
       </button>
 

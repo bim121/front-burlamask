@@ -1,40 +1,40 @@
-import './App.css';
+import styles from './App.module.css';
 import SliderUpload from './Slider/SliderUpload';
 
 function App() {
   return (
-    <div className="App">
-      <header>
-      <div className="wrapHeader">
-        <img  className = "burlaMaskImg" src="burlamask.png" width="120vh" height="120vh"/>
+    <div className={styles.app}>
+      <header className={styles.header}>
+      <div className={styles.wrapHeader}>
+        <img className = {styles.burlaMaskImg} src="burlamask.png" width="120vh" height="120vh"/>
         <h1>BurlaMask</h1>
       </div>
-      <div className="inputForm">
+      <div className={styles.inputForm}>
         <form>
           <input type="text"/>
         </form>
       </div>
     </header>
 
-    <div className="background">
-        <div className='slider'>
+    <div className={styles.background}>
+        <div className={styles.slider}>
           <SliderUpload/>
         </div>
-        <div className='container-button'>
+        <div className={styles.containerButton}>
           <button>Swap all</button>
         </div>
-        <div className='slider'>
+        <div className={styles.slider}>
           <SliderUpload/>
         </div>
     </div>
     
-    <footer>
-      <div className="wrapFooter">
-        <img  className = "burlaMaskImg" src="burlamask.png" width="120vh" height="120vh"/>
+    <footer className={styles.footer}>
+      <div className={styles.wrapFooter}>
+        <img  className = {styles.burlaMaskImg} src="burlamask.png" width="120vh" height="120vh"/>
       </div>
-      <p>BurlaMask</p>
+      <p className={styles.text}>BurlaMask</p>
       
-      <div className="team">
+      <div className={styles.team}>
         <h2>Team</h2>
         <ul>
           <li>Tishik Vitalii</li>
