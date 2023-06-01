@@ -9,6 +9,7 @@ const SliderUpload = () => {
   const [sliderValue, setSliderValue] = useState(0);
   const sliderRef = useRef(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [selectedFile, setSelectedFile] = useState(null);
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -39,6 +40,7 @@ const SliderUpload = () => {
 
   const handleFileUpload = (e) => {
     const uploadedPhoto = e.target.files[0];
+    setSelectedFile(e.target.files[0]);
     const newPhotos = [...photos, URL.createObjectURL(uploadedPhoto)];
     setPhotos(newPhotos);
     setCurrentPhotoIndex(newPhotos.length - 1);
@@ -60,7 +62,7 @@ const SliderUpload = () => {
         >
           <div className={styles.slider}>
             <div className={styles.upload} onClick={openModal}></div>
-            <ModalComponent isOpen={modalIsOpen} closeModal={closeModal} handleFileUpload={handleFileUpload} />
+            <ModalComponent isOpen={modalIsOpen} closeModal={closeModal} handleFileUpload={handleFileUpload} selectedFile={selectedFile}/>
             {photos.map((photo, index) => (
               <div
                 key={index}
