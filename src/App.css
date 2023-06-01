@@ -48,7 +48,12 @@ p{
 
 .background{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 75vh;
+}
+
+.slider{
+  height: 30vh;
 }

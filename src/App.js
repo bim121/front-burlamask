@@ -17,7 +17,15 @@ function App() {
     </header>
 
     <div className="background">
-        <SliderUpload/>
+        <div className='slider'>
+          <SliderUpload/>
+        </div>
+        <div className='container-button'>
+          <button>Swap all</button>
+        </div>
+        <div className='slider'>
+          <SliderUpload/>
+        </div>
     </div>
     
     <footer>
