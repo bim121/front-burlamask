@@ -8,7 +8,7 @@ import Header from './Header/Header';
 
 function App() {
   const [photos, setPhotos] = useState([]);
-  const [changedPhotos, setChangedPhotos] = useState(["burlamask.png"]);
+  const [changedPhotos, setChangedPhotos] = useState([]);
   const [errrorMessage, setErrorMessage] = useState('')
   let newPhotos = [];
   const handleFileUpload = async() => {
