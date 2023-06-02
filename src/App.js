@@ -3,6 +3,8 @@ import SliderUpload from './Slider/SliderUpload'
 import Slider from './Slider/Slider/Sliders';
 import axios from 'axios';
 import React, { useState, useRef } from 'react';
+import Footer from './Footer/Footer';
+import Header from './Header/Header';
 
 function App() {
   const [photos, setPhotos] = useState([]);
@@ -32,22 +34,9 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <header className={styles.header}>
-      <div className={styles.wrapHeader}>
-      <div className={styles.logo}><img className = {styles.burlaMaskImg} src="burlamask.png"/></div>
-        <h1>BurlaMask</h1>
-      </div>
-      <div className={styles.inputFull}>
-        <img className={styles.loopa} src = "loopa.png" onClick={focusInput}></img>
-        <div className={styles.inputForm}>
-          <form>
-            <input className={styles.headerInput} id="myInput" type="text"></input>
-          </form>
-        </div>
-      </div>
-    </header>
+      <Header />
 
-    <div className={styles.background}>
+      <div className={styles.background}>
         <div className={styles.slider}>
           <SliderUpload photos={photos} setPhotos={setPhotos} changedPhotos={changedPhotos} setChangedPhotos={setChangedPhotos}/>
         </div>
@@ -57,24 +46,9 @@ function App() {
         <div className={styles.slider}>
           <Slider changedPhotos={changedPhotos} setChangedPhotos={setChangedPhotos}/>
         </div>
-    </div>
+      </div>
     
-    <footer className={styles.footer}>
-      <div className={styles.wrapFooter}>
-        <div className={styles.logo}><img  className = {styles.burlaMaskImg} src="burlamask.png" width="120vh" height="120vh"/></div>
-      </div>
-      <p className={styles.text}>BurlaMask</p>
-      
-      <div className={styles.team}>
-        <h2>Team</h2>
-        <ul>
-          <li>Tishik Vitalii</li>
-          <li>Tkachenko Danil</li>
-          <li>Kiriyak Nazarii</li>
-          <li>Pan Stepan</li>
-        </ul>
-      </div>
-    </footer>
+      <Footer/>
     </div>
   );
 }
