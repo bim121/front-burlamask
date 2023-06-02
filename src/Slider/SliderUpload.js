@@ -50,7 +50,7 @@ const SliderUpload = () => {
     const formData = new FormData();
     formData.append('file', selectedFile);
     formData.append('description', text);
-    const { data } = await axios.post("http://localhost:5000/initialImage/add", formData);
+    const { data } = await axios.post("http://localhost:5001/initialImage/add", formData);
     if (data.status === parseInt('401')) {
       setErrorMessage(data.response)
     } else {
