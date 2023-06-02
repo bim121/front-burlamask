@@ -5,25 +5,45 @@
 
   .fileUploadLabel {
     display: inline-block;
-    padding: 8px 20px;
     background-color: #ebebeb;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    width: 13vw;
+    height: 10vh;
   }
   
   .fileUploadLabel:hover {
     background-color: #d5d5d5;
+
   }
   
   .uploadText {
-    margin-right: 8px;
+    font-size: 1vw;
+    line-height: 1;
   }
   
   .fileName {
     font-style: italic;
+    font-size: 1vw;
+    line-height: 1;
   }
+
+
+
+  @media screen and (max-width: 650px) {
+    .uploadText {
+      font-size: 0.7vw;
+      
+    }
+    
+    .fileName {
+      font-size: 0.7vw;
+    }
+
+  }
+
   
   .fileUpload {
     position: absolute;
@@ -40,6 +60,8 @@
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
+    width: 9vw;
+    height: 9vh;
   }
 
   .container{
@@ -49,6 +71,7 @@
 
   .wrapper{
     margin:auto;
+    margin-bottom: 0px;
     display: flex;
     flex-direction: row;
     width: 70%;
@@ -58,15 +81,15 @@
 
   .buttons{
     margin: auto;
-    margin-top: 20%;
+    margin-top: 20vh;
     display: flex;
-    width: 50%;
+    width: 70%;
     display: flex;
     justify-content: space-between;
   }
   
   .modalWindow{
-    padding-top: 5%;
+    padding-top: 2%;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -81,8 +104,10 @@
   .buttonModalSend{
     background-color: white;
     border: thin solid rgb(125, 149, 216);
-    padding:25px;
     border-radius: 30px;
+    width: 5vw;
+    height: 3vh;
+    font-size: 1vw;
   }
 
   .buttonModalSend:hover{
@@ -95,8 +120,10 @@
   .buttonModalClose{
     background-color: white;
     border: thin solid rgb(223, 130, 130);
-    padding:25px;
     border-radius: 30px;
+    width: 5vw;
+    height: 3vh;
+    font-size: 1vw;
   }
 
   .buttonModalClose:hover{

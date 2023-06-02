@@ -18,13 +18,13 @@ const ModalComponent = ({ isOpen, closeModal, handleFileUpload, selectedFile, ha
         <div className={styles.wrapper}>
           <div className={styles.customFileUpload}>
             <label htmlFor="file-upload" className={styles.fileUploadLabel}>
-              <span className={styles.uploadText}>Choose file</span>
+              <span className={styles.uploadText}>Choose file </span>
               <span className={styles.fileName}>{selectedFile ? selectedFile.name : 'No file was chosen'}</span>
             </label>
             <input id="file-upload" className={styles.fileUpload} type="file" accept="image/*" onChange={handleImage} />
           </div>
         
-        
+
           <textarea
             rows={5}
             cols={50}
