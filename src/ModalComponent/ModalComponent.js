@@ -12,13 +12,14 @@ const ModalComponent = ({ isOpen, closeModal, handleFileUpload, selectedFile, ha
       isOpen={isOpen}
       onRequestClose={closeModal}
       contentLabel="Modal"
+      className={styles.modalWindow}
     >
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.customFileUpload}>
             <label htmlFor="file-upload" className={styles.fileUploadLabel}>
-              <span className={styles.uploadText}>Выбрать файл</span>
-              <span className={styles.fileName}>{selectedFile ? selectedFile.name : 'Файл не выбран'}</span>
+              <span className={styles.uploadText}>Choose file </span>
+              <span className={styles.fileName}>{selectedFile ? selectedFile.name : 'No file was chosen'}</span>
             </label>
             <input id="file-upload" className={styles.fileUpload} type="file" accept="image/*" onChange={handleImage} />
           </div>
@@ -33,8 +34,8 @@ const ModalComponent = ({ isOpen, closeModal, handleFileUpload, selectedFile, ha
           />
         </div>
         <div className={styles.buttons}>
-          <button onClick={closeModal}>Закрыть</button>
-          <button onClick={handleFileUpload}>Отправить</button>
+          <button onClick={closeModal} className={styles.buttonModalClose}>Close</button>
+          <button onClick={handleFileUpload} className={styles.buttonModalSend}>Send</button>
         </div>
       </div>
     </Modal>
