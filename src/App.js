@@ -6,7 +6,7 @@ import React, { useState, useRef } from 'react';
 
 function App() {
   const [photos, setPhotos] = useState([]);
-  const [changedPhotos, setChangedPhotos] = useState([]);
+  const [changedPhotos, setChangedPhotos] = useState(["burlamask.png"]);
   const [errrorMessage, setErrorMessage] = useState('')
   let newPhotos = [];
   const handleFileUpload = async() => {

@@ -1,0 +1,59 @@
+.modalWindow{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    height: 40vh;
+    background-color: white;
+    border: thin solid rgb(125, 149, 216);
+    border-radius: 30px;
+  }
+
+  .info{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+  }
+ 
+  .modalImage{
+    width: 13vw;
+    height: 16vh;
+  }
+
+  .modalDescription{
+    font-size: 0.6vw;
+    width: 50%;
+    height: 100%;
+  }
+
+
+  h1{
+    font-size: 1vw;
+  }
+
+  .buttonModalClose{
+    background-color: white;
+    border: thin solid rgb(223, 130, 130);
+    border-radius: 30px;
+    width: 5vw;
+    height: 3vh;
+    font-size: 1vw;
+    margin: 0 auto;
+    margin-top: 7vh;
+    display: block;
+  }
+
+  .buttonModalClose:hover{
+    border: none;
+    background-color: rgb(223, 130, 130);
+    color: white;
+    cursor: pointer;
+  }
+
+  .descriptionText{
+    font-style: italic;
+    font-weight: bold;
+  }

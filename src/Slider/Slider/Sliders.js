@@ -60,7 +60,7 @@ const Sliders = ({changedPhotos}) => {
                   flexShrink: 1,
                 }}
               >
-                <img src={photo.image.url} alt={`Photo ${index}`} className={styles.image} onClick={() => openImageModal(index)}/>
+                <img src={photo} alt={`Photo ${index}`} className={styles.image} onClick={() => openImageModal(index)}/>
               </div>
             ))}
             {changedPhotos.length > 0 ? <ImageModalComponent isOpen={ImageModalIsOpen} closeModal={closeImageModal} data={changedPhotos[photoIndex]}/> : null}
