@@ -65,7 +65,7 @@ const SliderUpload = () => {
   return (
     <div className={styles.container}>
       <button onClick={handlePrevious} disabled={currentPhotoIndex === 0} className={styles.button}>
-        Previous
+      &lt;
       </button>
       <div className={styles.wrapper}>
         <div
@@ -77,7 +77,7 @@ const SliderUpload = () => {
         >
           <div className={styles.slider}>
             <div className={styles.upload} onClick={openModal}>
-              <img src="./32339.png" alt={`plus`} className={styles.image}/>
+              <div className={styles.addFile}>Add photo</div>
             </div>
             <ModalComponent isOpen={modalIsOpen} closeModal={closeModal} handleFileUpload={handleFileUpload} 
               selectedFile={selectedFile} handleImage={handleImage} setText={setText} text = {text}/>
@@ -96,7 +96,7 @@ const SliderUpload = () => {
         </div>
       </div>
       <button onClick={handleNext} disabled={currentPhotoIndex === photos.length - 1} className={styles.button}>
-        Next
+        &gt;
       </button>
 
       <Slider

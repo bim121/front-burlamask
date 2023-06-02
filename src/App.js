@@ -6,13 +6,16 @@ function App() {
     <div className={styles.app}>
       <header className={styles.header}>
       <div className={styles.wrapHeader}>
-        <img className = {styles.burlaMaskImg} src="burlamask.png" width="120vh" height="120vh"/>
+      <div className={styles.logo}><img className = {styles.burlaMaskImg} src="burlamask.png"/></div>
         <h1>BurlaMask</h1>
       </div>
-      <div className={styles.inputForm}>
-        <form>
-          <input type="text"/>
-        </form>
+      <div className={styles.inputFull}>
+        <img className={styles.loopa} src = "loopa.png" onClick={focusInput}></img>
+        <div className={styles.inputForm}>
+          <form>
+            <input className={styles.headerInput} id="myInput" type="text"></input>
+          </form>
+        </div>
       </div>
     </header>
 
@@ -21,7 +24,7 @@ function App() {
           <SliderUpload/>
         </div>
         <div className={styles.containerButton}>
-          <button>Swap all</button>
+         <div><img className={styles.swapIcon} src = "swap-icon.jpg"></img></div>
         </div>
         <div className={styles.slider}>
           <SliderUpload/>
@@ -30,7 +33,7 @@ function App() {
     
     <footer className={styles.footer}>
       <div className={styles.wrapFooter}>
-        <img  className = {styles.burlaMaskImg} src="burlamask.png" width="120vh" height="120vh"/>
+        <div className={styles.logo}><img  className = {styles.burlaMaskImg} src="burlamask.png" width="120vh" height="120vh"/></div>
       </div>
       <p className={styles.text}>BurlaMask</p>
       
@@ -46,6 +49,10 @@ function App() {
     </footer>
     </div>
   );
+}
+
+function focusInput() {
+  document.getElementById("myInput").focus();
 }
 
 export default App;

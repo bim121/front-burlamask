@@ -4,11 +4,20 @@
 }
 
 .button{
-    margin: 5px;
+    margin: 50px;
+    background-color: white;
+    color: rgb(125, 149, 216);
+    border: none;
+    border-radius: 100px;
+    font-size: 6vh;
+}
+
+.button:hover{
+    color:rgb(0, 68, 255);;
 }
 
 .wrapper{
-    width: 20vw;
+    width: 30vw;
     overflow: hidden;
 }
 
@@ -18,10 +27,26 @@
 
 .upload{
     height: 15vh;
-    width: 10vw;
+    width: 15vw;
 }
 
 .image{
-    width: 10vw;
+    width: 15vw;
     height: 15vh; 
+}
+
+.addFile{
+    border: 3px dashed rgb(114, 45, 45);
+    width: 12vw;
+    height: 14vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 2vh;
+}
+
+.addFile:hover{
+    cursor: pointer;
+    background-color: rgb(247, 243, 243);
 }
