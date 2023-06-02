@@ -26,27 +26,25 @@
 }
 
 .upload{
-    height: 15vh;
-    width: 15vw;
-}
-
-.image{
-    width: 15vw;
-    height: 15vh; 
-}
-
-.addFile{
-    border: 3px dashed rgb(114, 45, 45);
-    width: 12vw;
-    height: 14vh;
+    border: 2px dashed rgb(114, 45, 45);
+    height: 14.5vh;
+    width: 14vw;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
     font-size: 2vh;
+    margin-left: 0.8vw;
 }
 
-.addFile:hover{
+.image{
+    width: 14vw;
+    height: 15vh; 
+    margin-left: 0.8vw;
+}
+
+
+.upload:hover{
     cursor: pointer;
     background-color: rgb(247, 243, 243);
 }

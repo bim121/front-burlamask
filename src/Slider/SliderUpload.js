@@ -1,21 +1,22 @@
 import React, { useState, useRef } from 'react';
 import Slider from 'react-slider';
 import ModalComponent from '../ModalComponent/ModalComponent';
+import ImageModalComponent from '../ModalComponent/imageModalComponent/ImageModalComponent';
 import styles from './SliderUpload.module.css'
 import axios from 'axios';
 
-const SliderUpload = () => {
-  const [photos, setPhotos] = useState([]);
+const SliderUpload = ({photos, setPhotos, changedPhotos, setChangedPhotos}) => {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
+  const [photoIndex, setPhotoIndex] = useState(0);
   const [sliderValue, setSliderValue] = useState(0);
   const sliderRef = useRef(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [ImageModalIsOpen, setImageModalIsOpen] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
   const [text, setText] = useState('');
   const [errrorMessage, setErrorMessage] = useState('')
 
   const handleImage = (e) => {
-    const uploadedPhoto = e.target.files[0];
     setSelectedFile(e.target.files[0]);
   }
 
@@ -23,8 +24,18 @@ const SliderUpload = () => {
     setModalIsOpen(true);
   };
 
+
+  const openImageModal = (index) => {
+    setPhotoIndex(index);
+    setImageModalIsOpen(true);
+  };
+
   const closeModal = () => {
     setModalIsOpen(false);
+  };
+
+  const closeImageModal = () => {
+    setImageModalIsOpen(false);
   };
 
   const handleSliderChange = (value) => {
@@ -56,7 +67,7 @@ const SliderUpload = () => {
     } else {
       console.log(data)
     }
-    const newPhotos = [...photos, data.image.url];
+    const newPhotos = [...photos, data];
     setPhotos(newPhotos);
     setCurrentPhotoIndex(newPhotos.length - 1);
     setSliderValue(newPhotos.length - 1);
@@ -89,9 +100,10 @@ const SliderUpload = () => {
                   flexShrink: 1,
                 }}
               >
-                <img src={photo} alt={`Photo ${index}`} className={styles.image} />
+                <img src={photo.image.url} alt={`Photo ${index}`} className={styles.image} onClick={() => openImageModal(index)}/>
               </div>
             ))}
+            {photos.length > 0 ? <ImageModalComponent isOpen={ImageModalIsOpen} closeModal={closeImageModal} data={photos[photoIndex]}/> : null}
           </div>
         </div>
       </div>
