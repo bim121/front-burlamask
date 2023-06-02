@@ -24,7 +24,7 @@ const ModalComponent = ({ isOpen, closeModal, handleFileUpload, selectedFile, ha
             <input id="file-upload" className={styles.fileUpload} type="file" accept="image/*" onChange={handleImage} />
           </div>
         
-
+        
           <textarea
             rows={5}
             cols={50}
