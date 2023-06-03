@@ -16,10 +16,10 @@ const Sliders = ({changedPhotos, setChangedPhotos, user}) => {
     setChangedPhotos(newArray);
     axios.delete(`http://localhost:5001/changedImage/${id}`)
     .then(response => {
-      console.log('Элемент успешно удален');
+      console.log('Element was deleted');
     })
     .catch(error => {
-      console.error('Ошибка при удалении элемента:', error);
+      console.error('Error while deleting element:', error);
     });
   }
 
