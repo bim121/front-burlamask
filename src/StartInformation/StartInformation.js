@@ -6,11 +6,10 @@ const StartInformation= () => {
     <div className={style.wrapper}>
       <div className={style.startInformation}>
           <div className={style.textBlock}>
-              <p><span>Indoor navigation</span></p>
-              <p>already with you</p>
+              <p><span>BurlaMask</span></p>
+              <p>face swap service</p>
               <p className={style.text}>
-                  With the help of our service, <span>you can easily navigate 
-                  in any building</span> without worrying about getting lost!
+                  With the help of this service, <span>you can easily swap faces</span> on photos without any problems!
               </p>
           </div>
           <div className={style.startImage}>

@@ -132,3 +132,7 @@ h1{
 .swapIcon:hover{
   cursor: pointer;
 }
+
+.colorBg{
+  background-color: rgb(167, 220, 248);
+}

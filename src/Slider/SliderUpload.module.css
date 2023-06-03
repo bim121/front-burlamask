@@ -5,8 +5,8 @@
 
 .button{
     margin: 50px;
-    background-color: white;
-    color: rgb(125, 149, 216);
+    background-color: rgb(167, 220, 248);
+    color: rgb(85, 114, 194);
     border: none;
     border-radius: 100px;
     font-size: 6vh;
@@ -30,6 +30,7 @@
     height: 14.5vh;
     width: 14vw;
     display: flex;
+    background-color: white;
     align-items: center;
     justify-content: center;
     font-weight: bold;
@@ -46,5 +47,5 @@
 
 .upload:hover{
     cursor: pointer;
-    background-color: rgb(247, 243, 243);
+    background-color: rgb(219, 214, 214);
 }

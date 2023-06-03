@@ -22,7 +22,7 @@ const Footer= () => {
                 </div>
             </div>
             <div className = {style.copyInfo}>
-                <p className={style.copyInfoText}>©2023 Pocket Buddy. All rights protected</p>
+                <p className={style.copyInfoText}>©2023 BurlaMask. All rights reserved</p>
             </div>
             </div>
         </footer>

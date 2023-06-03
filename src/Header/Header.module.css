@@ -3,8 +3,9 @@
     flex-direction: row;
     width: 100%;
     height: 100px;
-    background-color: #1D2530;
+    background-color: rgb(132, 140, 247);
     justify-content: center;
+    font-size: 18px;
 }
 
 .image__logo{

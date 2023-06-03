@@ -38,19 +38,19 @@ function App() {
       <Header />
 
       <ContentStartPage />
-
-      <div className={styles.background}>
-        <div className={styles.slider}>
-          <SliderUpload photos={photos} setPhotos={setPhotos} changedPhotos={changedPhotos} setChangedPhotos={setChangedPhotos}/>
-        </div>
-        <div className={styles.containerButton}>
-         <div onClick={handleFileUpload}><img className={styles.swapIcon} src = "swap-icon.jpg"></img></div>
-        </div>
-        <div className={styles.slider}>
-          <Slider changedPhotos={changedPhotos} setChangedPhotos={setChangedPhotos}/>
+      <div className={styles.colorBg}>
+        <div className={styles.background}>
+          <div className={styles.slider}>
+            <SliderUpload photos={photos} setPhotos={setPhotos} changedPhotos={changedPhotos} setChangedPhotos={setChangedPhotos}/>
+          </div>
+          <div className={styles.containerButton}>
+          <div onClick={handleFileUpload}><img className={styles.swapIcon} src = "swap-icon.jpg"></img></div>
+          </div>
+          <div className={styles.slider}>
+            <Slider changedPhotos={changedPhotos} setChangedPhotos={setChangedPhotos}/>
+          </div>
         </div>
       </div>
-    
       <Footer/>
     </div>
   );
