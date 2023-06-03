@@ -1,19 +1,20 @@
 import React from 'react';
 import style from './Header.module.css';
 import { Search } from '../Search/Search';
+import { NavLink } from 'react-router-dom';
 
-const Header = ({changedPhotos, setChangedPhotos, duplicateChangedPhotos}) => {
+const Header = ({changedPhotos, setChangedPhotos, duplicateChangedPhotos, isMainPage = true}) => {
   return (
     <>
         <div className={style.header}>
             <div className={style.wrapper}>
               <div className={style.image__logo}>
-                  <img src="burlamask.png" alt="logo" className={style.logotype}/>
+                <NavLink to = '/'><img src="burlamask.png" alt="logo" className={style.logotype}/></NavLink>
               </div>
               <div className={style.links}>
-                  <Search changedPhotos={changedPhotos} setChangedPhotos={setChangedPhotos} duplicateChangedPhotos={duplicateChangedPhotos}/>
-                  <a>Вхід</a>
-                  <a>Реєстрація</a>
+                  {isMainPage ? <Search changedPhotos={changedPhotos} setChangedPhotos={setChangedPhotos} duplicateChangedPhotos={duplicateChangedPhotos}/> : null}
+                  <NavLink to ='/login'>Вхід</NavLink>
+                  <NavLink to ='/register'>Реєстрація</NavLink>
                   <a>admin dashboard</a>
               </div>
             </div>
