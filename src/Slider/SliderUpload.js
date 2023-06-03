@@ -16,6 +16,22 @@ const SliderUpload = ({user, photos, setPhotos}) => {
   const [text, setText] = useState('');
   const [errrorMessage, setErrorMessage] = useState('')
 
+  useEffect(() => {
+    (async () => {
+    if (user) {
+      const object = {
+        username: user
+      }
+      const { data } = await axios.post("http://localhost:5001/initialImage/username", object);
+      if (data.status === parseInt('401')) {
+        setErrorMessage(data.response)
+      } else {
+        console.log(data)
+      }
+      setPhotos(data);
+    }
+    })();
+  }, []);
 
   const handleDelete = (id) => {
     const newArray = photos.filter((p) => p.id !== id);

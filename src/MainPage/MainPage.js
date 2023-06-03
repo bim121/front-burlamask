@@ -17,9 +17,11 @@ function MainPage({user, setUser, role, SetRole}) {
   useEffect(() => {
     (async () => {
       if (user) {
-        const formData = new FormData();
-        formData.append('username', user);
-        const { data } = await axios.post("http://localhost:5001/changedImage/username", formData);
+        console.log(user)
+        const object = {
+          username: user
+        }
+        const { data } = await axios.post("http://localhost:5001/changedImage/username", object);
         if (data.status === parseInt('401')) {
           setErrorMessage(data.response)
         } else {
