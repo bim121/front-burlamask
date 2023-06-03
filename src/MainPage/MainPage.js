@@ -17,7 +17,7 @@ function MainPage({user, setUser, role, SetRole}) {
   useEffect(() => {
     (async () => {
       if (user) {
-        console.log(user)
+
         const object = {
           username: user
         }
@@ -49,7 +49,6 @@ function MainPage({user, setUser, role, SetRole}) {
       } else {
         console.log(data)
       }
-      console.log(data[0].image.url)
       newPhotos = [...newPhotos, data[0], data[1]];
     }
     setChangedPhotos(newPhotos);
