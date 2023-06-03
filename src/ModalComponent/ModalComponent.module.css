@@ -107,6 +107,9 @@
     width: 5vw;
     height: 3vh;
     font-size: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .buttonModalSend:hover{
@@ -123,6 +126,9 @@
     width: 5vw;
     height: 3vh;
     font-size: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .buttonModalClose:hover{

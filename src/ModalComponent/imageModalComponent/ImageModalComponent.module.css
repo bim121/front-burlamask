@@ -49,6 +49,9 @@
     width: 5vw;
     height: 3vh;
     font-size: 0.7vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .buttonModalDownload:hover{
@@ -65,6 +68,9 @@
     width: 5vw;
     height: 3vh;
     font-size: 0.7vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .buttonModalDelete:hover{
@@ -81,6 +87,9 @@
     width: 5vw;
     height: 3vh;
     font-size: 0.7vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .buttonModalClose:hover{
