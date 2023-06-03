@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import style from './Search.module.css';
 import axios from 'axios';
 
-export const Search = ({setChangedPhotos, duplicateChangedPhotos}) => {
+export const Search = ({setChangedPhotos, duplicateChangedPhotos, user}) => {
     const [text, setText] = useState("");
     const [errrorMessage, setErrorMessage] = useState('')
 
@@ -17,7 +17,8 @@ export const Search = ({setChangedPhotos, duplicateChangedPhotos}) => {
             } else {
                 console.log(data)
             }
-            setChangedPhotos(data);
+            const newArray = data.filter((d) => d.username === user);
+            setChangedPhotos(newArray);
         }
     }
 

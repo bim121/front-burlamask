@@ -4,7 +4,7 @@ import styles from '../SliderUpload.module.css'
 import ImageModalComponent from '../../ModalComponent/imageModalComponent/ImageModalComponent';
 import axios from 'axios';
 
-const Sliders = ({changedPhotos, setChangedPhotos}) => {
+const Sliders = ({changedPhotos, setChangedPhotos, user}) => {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [sliderValue, setSliderValue] = useState(0);
   const [photoIndex, setPhotoIndex] = useState(0);

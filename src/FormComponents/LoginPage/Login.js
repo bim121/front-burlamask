@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import Header from '../../Header/Header';
 
-const Login = () => {
+const Login = ({setUser, setRole}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -16,16 +16,18 @@ const Login = () => {
       username: formData.get('username'),
       password: formData.get('password')
     };
-    const { data } = await axios.post("http://localhost:5000/auth/login", form);
+    const { data } = await axios.post("http://localhost:5001/auth/login", form);
     if (data.status === parseInt('401')) {
       setErrorMessage(data.response)
     } else {
       localStorage.setItem('token', data.token);
-      navigate('/dash')
+      setUser(data.username);
+      setRole(data.roles);
+      navigate('/mainpage')
     }
   };
 
-  const gotoSignUpPage = () => navigate("/register");
+  const gotoSignUpPage = () => navigate("/");
   
   return (
     <>
