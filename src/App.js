@@ -10,6 +10,7 @@ import ContentStartPage from './ContentStartPage/ContentStartPage';
 function App() {
   const [photos, setPhotos] = useState([]);
   const [changedPhotos, setChangedPhotos] = useState([]);
+  const [duplicateChangedPhotos, setDuplicateChangedPhotos] = useState([]);
   const [errrorMessage, setErrorMessage] = useState('')
   let newPhotos = [];
   const handleFileUpload = async() => {
@@ -31,11 +32,12 @@ function App() {
       newPhotos = [...newPhotos, data[0], data[1]];
     }
     setChangedPhotos(newPhotos);
+    setDuplicateChangedPhotos(newPhotos);
   };
 
   return (
     <div className={styles.app}>
-      <Header />
+      <Header changedPhotos={changedPhotos} setChangedPhotos={setChangedPhotos} duplicateChangedPhotos={duplicateChangedPhotos}/>
 
       <ContentStartPage />
       <div className={styles.colorBg}>

@@ -13,7 +13,7 @@ const StartInformation= () => {
               </p>
           </div>
           <div className={style.startImage}>
-              <img src="startImage.png" className = {style.image} alt ="#"></img>
+              <img src="logo1.png" className = {style.image} alt ="#"></img>
           </div>
       </div>
     </div>

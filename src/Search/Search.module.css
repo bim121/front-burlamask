@@ -1,0 +1,34 @@
+.headerInput{
+    background-color: #f2f2f2;
+    color: #333333;
+    border: 1px solid #999999;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+    margin-left: 10px;
+  }
+  
+  .headerInput:focus{
+    border-color: #ff0000;
+    animation: shake 0.3s;
+  }
+  
+  .headerInput:hover{
+    cursor: pointer;
+  }
+  
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+     100% { transform: translateX(0); }
+  }
+  
+  .loop{
+      width: 22px;
+      height: 22px;
+  }
+  
+  .loop:hover{
+      cursor: pointer;
+  }

@@ -2,7 +2,18 @@ import React, { useState, useRef } from 'react';
 import Modal from 'react-modal';
 import styles from './ImageModalComponent.module.css'
 
-const ImageModalComponent = ({ isOpen, closeModal, data}) => {
+const ImageModalComponent = ({ isOpen, closeModal, data, handleDelete}) => {
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = data.image.url;
+    link.click();
+  };
+
+  const handleClick = () => {
+    handleDelete(data.id);
+
+  };
+
   return (
     <Modal
       isOpen={isOpen}
@@ -22,8 +33,8 @@ const ImageModalComponent = ({ isOpen, closeModal, data}) => {
             </div>
           </div> 
           <div className={styles.buttons}>
-            <button onClick={closeModal} className={styles.buttonModalDownload}>Download</button>
-            <button onClick={closeModal} className={styles.buttonModalDelete}>Delete</button>
+            <button onClick={handleDownload} className={styles.buttonModalDownload}>Download</button>
+            <button onClick={handleClick} className={styles.buttonModalDelete}>Delete</button>
             <button onClick={closeModal} className={styles.buttonModalClose}>Close</button>
           </div>
       </div>

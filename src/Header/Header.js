@@ -1,7 +1,8 @@
 import React from 'react';
 import style from './Header.module.css';
+import { Search } from '../Search/Search';
 
-const Header = () => {
+const Header = ({changedPhotos, setChangedPhotos, duplicateChangedPhotos}) => {
   return (
     <>
         <div className={style.header}>
@@ -10,8 +11,7 @@ const Header = () => {
                   <img src="burlamask.png" alt="logo" className={style.logotype}/>
               </div>
               <div className={style.links}>
-                  <img src = "loop.png" className={style.loop} onClick={focusInput}></img>
-                  <input className={style.headerInput} id="search"></input>
+                  <Search changedPhotos={changedPhotos} setChangedPhotos={setChangedPhotos} duplicateChangedPhotos={duplicateChangedPhotos}/>
                   <a>Вхід</a>
                   <a>Реєстрація</a>
                   <a>admin dashboard</a>
@@ -20,10 +20,6 @@ const Header = () => {
         </div>
     </>
   );
-}
-
-function focusInput() {
-  document.getElementById("search").focus();
 }
 
 export default Header;

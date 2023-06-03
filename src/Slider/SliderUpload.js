@@ -5,7 +5,7 @@ import ImageModalComponent from '../ModalComponent/imageModalComponent/ImageModa
 import styles from './SliderUpload.module.css'
 import axios from 'axios';
 
-const SliderUpload = ({photos, setPhotos, changedPhotos, setChangedPhotos}) => {
+const SliderUpload = ({photos, setPhotos}) => {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [photoIndex, setPhotoIndex] = useState(0);
   const [sliderValue, setSliderValue] = useState(0);
@@ -15,6 +15,18 @@ const SliderUpload = ({photos, setPhotos, changedPhotos, setChangedPhotos}) => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [text, setText] = useState('');
   const [errrorMessage, setErrorMessage] = useState('')
+
+  const handleDelete = (id) => {
+    const newArray = photos.filter((p) => p.id !== id);
+    setPhotos(newArray);
+    axios.delete(`http://localhost:5001/initialImage/${id}`)
+    .then(response => {
+      console.log('Элемент успешно удален');
+    })
+    .catch(error => {
+      console.error('Ошибка при удалении элемента:', error);
+    });
+  }
 
   const handleImage = (e) => {
     setSelectedFile(e.target.files[0]);
@@ -103,7 +115,7 @@ const SliderUpload = ({photos, setPhotos, changedPhotos, setChangedPhotos}) => {
                 <img src={photo.image.url} alt={`Photo ${index}`} className={styles.image} onClick={() => openImageModal(index)}/>
               </div>
             ))}
-            {photos.length > 0 ? <ImageModalComponent isOpen={ImageModalIsOpen} closeModal={closeImageModal} data={photos[photoIndex]}/> : null}
+            {photos.length > 0 ? <ImageModalComponent isOpen={ImageModalIsOpen} closeModal={closeImageModal} data={photos[photoIndex]} handleDelete={handleDelete} /> : null}
           </div>
         </div>
       </div>
