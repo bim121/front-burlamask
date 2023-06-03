@@ -13,8 +13,6 @@ const Header = ({changedPhotos, setChangedPhotos, duplicateChangedPhotos, isMain
               </div>
               <div className={style.links}>
                   {isMainPage ? <Search changedPhotos={changedPhotos} setChangedPhotos={setChangedPhotos} duplicateChangedPhotos={duplicateChangedPhotos}/> : null}
-                  <NavLink to ='/login'>Вхід</NavLink>
-                  <NavLink to ='/register'>Реєстрація</NavLink>
                   <a>admin dashboard</a>
               </div>
             </div>

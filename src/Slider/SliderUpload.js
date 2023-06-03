@@ -1,11 +1,11 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Slider from 'react-slider';
 import ModalComponent from '../ModalComponent/ModalComponent';
 import ImageModalComponent from '../ModalComponent/imageModalComponent/ImageModalComponent';
 import styles from './SliderUpload.module.css'
 import axios from 'axios';
 
-const SliderUpload = ({photos, setPhotos}) => {
+const SliderUpload = ({user, photos, setPhotos}) => {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [photoIndex, setPhotoIndex] = useState(0);
   const [sliderValue, setSliderValue] = useState(0);
@@ -15,6 +15,7 @@ const SliderUpload = ({photos, setPhotos}) => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [text, setText] = useState('');
   const [errrorMessage, setErrorMessage] = useState('')
+
 
   const handleDelete = (id) => {
     const newArray = photos.filter((p) => p.id !== id);
@@ -73,6 +74,7 @@ const SliderUpload = ({photos, setPhotos}) => {
     const formData = new FormData();
     formData.append('file', selectedFile);
     formData.append('description', text);
+    formData.append('username', user);
     const { data } = await axios.post("http://localhost:5001/initialImage/add", formData);
     if (data.status === parseInt('401')) {
       setErrorMessage(data.response)
