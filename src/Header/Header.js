@@ -13,7 +13,7 @@ const Header = ({changedPhotos, setChangedPhotos, duplicateChangedPhotos, isMain
               </div>
               <div className={style.links}>
                   {isMainPage ? <Search changedPhotos={changedPhotos} setChangedPhotos={setChangedPhotos} duplicateChangedPhotos={duplicateChangedPhotos} user={user}/> : null}
-                  <a>admin dashboard</a>
+                  {role === 'Admin' ?<NavLink to = '/dashboard'>admin dashboard</NavLink>:null}
               </div>
             </div>
         </div>
