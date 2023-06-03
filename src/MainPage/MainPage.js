@@ -28,6 +28,7 @@ function MainPage({user, setUser, role, SetRole}) {
           console.log(data)
         }
         setChangedPhotos(data);
+        setDuplicateChangedPhotos(data);
       }
     })();
   }, []);
@@ -57,7 +58,7 @@ function MainPage({user, setUser, role, SetRole}) {
 
   return (
     <div className={styles.app}>
-      <Header changedPhotos={changedPhotos} setChangedPhotos={setChangedPhotos} duplicateChangedPhotos={duplicateChangedPhotos}/>
+      <Header changedPhotos={changedPhotos} setChangedPhotos={setChangedPhotos} duplicateChangedPhotos={duplicateChangedPhotos} user={user} role={role}/>
       <ContentStartPage />
       <div className={styles.colorBg}>
         <div className={styles.background}>
