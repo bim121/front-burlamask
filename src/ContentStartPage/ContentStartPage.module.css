@@ -1,0 +1,41 @@
+body{
+    background-color: white;
+}
+
+p{
+    margin: 0;
+}
+
+@font-face {font-family: "Rany";
+    src: url("../fonts/3bff66e162b5055b568f8b36891ee8ca.eot"); /* IE9*/
+    src: url("../fonts/3bff66e162b5055b568f8b36891ee8ca.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/3bff66e162b5055b568f8b36891ee8ca.woff2") format("woff2"), /* chrome、firefox */
+    url("../fonts/3bff66e162b5055b568f8b36891ee8ca.woff") format("woff"), /* chrome、firefox */
+    url("../fonts/3bff66e162b5055b568f8b36891ee8ca.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url("../fonts/3bff66e162b5055b568f8b36891ee8ca.svg#Rany") format("svg"); /* iOS 4.1- */
+  }
+
+span{
+    color: #685ED6;
+}
+
+.image{
+    width: 25vw;
+    height: 400px;
+}
+
+.content{
+    font-family: 'Rany';
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: calc(75vh - 200px);
+}
+
+@media screen and (max-width: 1100px) {
+    .imagesFirstPage img{
+        width: 19vw;
+        height: 250px;
+    }
+}
