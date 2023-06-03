@@ -29,9 +29,49 @@
     height: 100%;
   }
 
-
   h1{
     font-size: 1vw;
+  }
+
+  
+  .buttons{
+    margin: auto;
+    margin-top: 7vh;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .buttonModalDownload{
+    background-color: white;
+    border: thin solid rgb(172, 231, 161);
+    border-radius: 30px;
+    width: 5vw;
+    height: 3vh;
+    font-size: 0.7vw;
+  }
+
+  .buttonModalDownload:hover{
+    border: none;
+    background-color: rgb(172, 231, 161);
+    color: white;
+    cursor: pointer;
+  }
+
+  .buttonModalDelete{
+    background-color: white;
+    border: thin solid rgb(226, 160, 73);
+    border-radius: 30px;
+    width: 5vw;
+    height: 3vh;
+    font-size: 0.7vw;
+  }
+
+  .buttonModalDelete:hover{
+    border: none;
+    background-color: rgb(226, 160, 73);
+    color: white;
+    cursor: pointer;
   }
 
   .buttonModalClose{
@@ -40,10 +80,7 @@
     border-radius: 30px;
     width: 5vw;
     height: 3vh;
-    font-size: 1vw;
-    margin: 0 auto;
-    margin-top: 7vh;
-    display: block;
+    font-size: 0.7vw;
   }
 
   .buttonModalClose:hover{
@@ -56,4 +93,5 @@
   .descriptionText{
     font-style: italic;
     font-weight: bold;
+    font-size: 0.7vw;
   }
