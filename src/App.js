@@ -5,10 +5,11 @@ import axios from 'axios';
 import React, { useState, useRef } from 'react';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
+import ContentStartPage from './ContentStartPage/ContentStartPage';
 
 function App() {
   const [photos, setPhotos] = useState([]);
-  const [changedPhotos, setChangedPhotos] = useState(["burlamask.png"]);
+  const [changedPhotos, setChangedPhotos] = useState([]);
   const [errrorMessage, setErrorMessage] = useState('')
   let newPhotos = [];
   const handleFileUpload = async() => {
@@ -35,6 +36,8 @@ function App() {
   return (
     <div className={styles.app}>
       <Header />
+
+      <ContentStartPage />
 
       <div className={styles.background}>
         <div className={styles.slider}>

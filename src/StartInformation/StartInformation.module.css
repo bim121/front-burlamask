@@ -1,0 +1,33 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.startInformation{
+    display: flex;
+    width: 70%;
+    margin-top: 80px;
+    margin-bottom: 100px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.image{
+    width: 23vw;
+    height: 400px;
+}
+
+
+.textBlock{
+    margin-top: 90px;
+    font-size: 3.5rem;
+    width: 45%;
+}
+.text{
+    font-size: 1.8rem;
+    margin-top: 40px;
+}
+
+span{
+    color: #685ED6;
+}
