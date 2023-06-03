@@ -21,7 +21,11 @@ const ImageModalComponent = ({ isOpen, closeModal, data}) => {
               {data.description}
             </div>
           </div> 
-          <button onClick={closeModal} className={styles.buttonModalClose}>Close</button>
+          <div className={styles.buttons}>
+            <button onClick={closeModal} className={styles.buttonModalDownload}>Download</button>
+            <button onClick={closeModal} className={styles.buttonModalDelete}>Delete</button>
+            <button onClick={closeModal} className={styles.buttonModalClose}>Close</button>
+          </div>
       </div>
     </Modal>
   );
